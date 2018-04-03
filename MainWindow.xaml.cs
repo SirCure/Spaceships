@@ -1,6 +1,6 @@
 //Andrew Markham
 //March 26, 2018
-//A program that will have spaceships that the users will fly around and the program will check if the ships collide.
+//A spaceship program that has two ships that can be controlled by players. The program will stop if a collision between the two ships is detected.
 using System;
 using System.Collections.Generic;
 using System.Linq;
