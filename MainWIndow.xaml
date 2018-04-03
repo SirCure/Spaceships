@@ -1,0 +1,14 @@
+//Andrew Markham
+//March 26, 2018
+//A spaceship program that has two ships that can be controlled by players. The program will stop if a collision between the two ships is detected.
+<Window x:Class="U2Spaceships.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:U2Spaceships"
+        mc:Ignorable="d"
+        PreviewKeyDown="key"
+        Title="Pew Pew" Height="500" Width="500">
+    <Canvas x:Name="canvas"/>
+</Window>
