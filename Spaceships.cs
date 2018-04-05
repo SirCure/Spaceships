@@ -21,6 +21,7 @@ namespace U2Spaceships
         public double locationX;
         public double locationY;
 
+        //Constructor method.
         public Spaceships(double locationx, double locationy)
         {
             this.ship = new Rectangle();
@@ -41,6 +42,7 @@ namespace U2Spaceships
             {
                 direction += 360;
             }
+
             if (direction % 360 == 0)
             {
                 locationY--;
@@ -64,9 +66,9 @@ namespace U2Spaceships
                 locationX--;
                 Canvas.SetLeft(r, locationX);
             }
-            //Thread.Sleep(50);
         }
 
+        //Checks the value of the boolean and turns either left or right depending on the value. Changes the value of the current direction.
         public void Turn(bool TurnLeftIsTrue)
         {
             if (TurnLeftIsTrue == true)
@@ -80,12 +82,13 @@ namespace U2Spaceships
             }
         }
 
+        //Checks to see if the spaceships are overlapping one another, returns true if they are overlapping, false if they are apart.
         public bool checkCollision(Spaceships s2)
         {
             if (Math.Abs(this. locationX - s2.locationX) <= 25 && Math.Abs(this.locationY - s2.locationY) <=25)
             {
-                MessageBox.Show(Convert.ToString(this.locationX - s2.locationX));
-                MessageBox.Show("Crash!");
+                MessageBox.Show("Crash! \nGAME OVER");
+                System.Windows.Application.Current.Shutdown();
                 return true;
             }
 
