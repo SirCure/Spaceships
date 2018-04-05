@@ -1,6 +1,6 @@
 //Andrew Markham
 //March 26, 2018
-//A spaceship program that has two ships that can be controlled by players. The program will stop if a collision between the two ships is detected.
+//A program that will have spaceships that the users will fly around and the program will check if the ships collide.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,18 +53,21 @@ namespace U2Spaceships
                 if (Keyboard.IsKeyDown(Key.W))
                 {
                 s.Fly(s.ship, s.currentDir);
+                s.checkCollision(s2);
                 }
 
                 //Moves down.
                 if (Keyboard.IsKeyDown(Key.S))
                 {
                 s.Fly(s.ship, s.currentDir - 180);
+                s.checkCollision(s2);
                 }
 
                 //Turns left.
                 if (Keyboard.IsKeyDown(Key.A))
                 {
                 s.Turn(true);
+                s.checkCollision(s2);
                 }
 
                 //Turns right.
@@ -78,12 +81,14 @@ namespace U2Spaceships
             if (Keyboard.IsKeyDown(Key.Up))
             {
                 s2.Fly(s2.ship, s2.currentDir);
+                s2.checkCollision(s);
             }
 
             //Moves down.
             if (Keyboard.IsKeyDown(Key.Down))
             {
                 s2.Fly(s2.ship, s2.currentDir - 180);
+                s2.checkCollision(s);
             }
 
             //Turns left.
