@@ -80,9 +80,19 @@ namespace U2Spaceships
             }
         }
 
-        public bool checkCollision()
+        public bool checkCollision(Spaceships s2)
         {
-            return false;
+            if (Math.Abs(this. locationX - s2.locationX) <= 25 && Math.Abs(this.locationY - s2.locationY) <=25)
+            {
+                MessageBox.Show(Convert.ToString(this.locationX - s2.locationX));
+                MessageBox.Show("Crash!");
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
     }
 }
